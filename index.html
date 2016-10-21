@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Template Engine</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="assets/fonts/font-awesome-4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="assets/images/logo.png" alt="" id="img">
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <section class="actions-block">
+            <ul class="action-menu">
+                <li class="templates">
+                    <a href="javascript:;"><i class="fa fa-tachometer"></i>Backsgrounds</a>
+                    <div class="sub-actions">
+                        <div class="block default-templates">
+                            <h2>Background Images</h2>
+                            <ul>
+                            </ul>
+                        </div>
+                        <div class="block colors">
+                            <h2>Background color</h2>
+                            <ul>
+                            </ul>
+                            <h2>color palette</h2>
+                            <input type="color" id="template-bg-color" />
+                        </div>
+                        <div class="block saved saved-projs">
+                            <h2>Saved Templates</h2>
+                            <ul>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="texts">
+                    <a href="javascript:;" class="add-text"><i class="fa fa-pencil"></i>Add Text</a>
+                </li>
+                <li>
+                    <a href="javascript:;" class="image"><i class="fa fa-picture-o"></i>Add Image</a>
+                    <input type="file" class="addimg" id="addimg" style="display:none;" />
+                </li>
+                <li class="cliparts">
+                    <a href="javascript:;"><i class="fa fa-file-image-o"></i>Cliparts</a>
+                    <div class="sub-actions">
+                        <div class="block">
+                            <h2>Cliparts</h2>
+                            <ul>
+                            </ul>
+                        </div>
+                        <!-- <div class="block upload-cliparts">
+                            <h2>Uploads</h2>
+                            <div class="upload-field">
+                                <input type="file" id="upload-cliparts" />
+                            </div>
+                            <ul>
+                                <li>
+                                    <img src="assets/images/cliparts/clipart1.png" alt="clipart1" />
+                                </li>
+                                <li>
+                                    <img src="assets/images/cliparts/clipart2.png" alt="clipart2" />
+                                </li>
+                                <li>
+                                    <img src="assets/images/cliparts/clipart3.png" alt="clipart3" />
+                                </li>
+                            </ul>
+                        </div> -->
+                    </div>
+                </li>
+                <li>
+                    <a href="javascript:;" class="save"><i class="fa fa-floppy-o"></i>Save</a>
+                </li>
+                <li>
+                    <a href="javascript:;" class="preview"><i class="fa fa-search"></i>Preview</a>
+                </li>
+                <li>
+                    <a href="javascript:;" class="download"><i class="fa fa-download"></i>Download</a>
+                </li>
+            </ul>
+            <div class="sub-actions text-styles ui-widget-content" id="text-styles">
+                <div class="text-style-handler">
+                    <p>
+                        Text Properties
+                    </p>
+                    <span class="close textstyle-close">
+                        X
+                    </span>
+                </div>
+                <div class="">
+                    <div class="block">
+                        <h2>
+                        Text Styles
+                    </h2>
+                        <ul>
+                            <li>
+                                <span class="actn-labels">font family</span>
+                                <select id="font-family">
+                                    <option value="" selected>Select</option>
+                                    <option value="arial">Arial</option>
+                                    <option value="myriad pro">Myriad Pro</option>
+                                    <option value="verdana">Verdana</option>
+                                    <option value="cursive">cursive</option>
+                                    <option value="comic sans ms">Comic Sans MS</option>
+                                    <option value="Architex">Architex</option>
+                                    <option value="BLKCHCRY">BLKCHCRY</option>
+                                    <option value="Eutemia">Eutemia</option>
+                                    <option value="James-Fajardo">James-Fajardo</option>
+                                    <option value="MardianDemo">MardianDemo</option>
+                                    <option value="Respective_Swashes">Respective_Swashes</option>
+                                    <option value="Precious">Precious</option>
+                                    <option value="SCRIPTIN">SCRIPTIN</option>
+                                    <option value="SFBurlingtonScript">SFBurlingtonScript</option>
+                                    <option value="Tafelschrift">Tafelschrift</option>
+                                    <option value="trashco">trashco</option>
+                                    <option value="GreatVibes-Regular">GreatVibes-Regular</option>
+                                </select>
+                            </li>
+                            <li>
+                                <span class="actn-labels">font size</span>
+                                <select id="font-size">
+                                    <option value="">select</option>
+                                    <option value="10">10</option>
+                                    <option value="12">12</option>
+                                    <option value="14">14</option>
+                                    <option value="16">16</option>
+                                    <option value="18">18</option>
+                                    <option value="20">20</option>
+                                    <option value="22">22</option>
+                                    <option value="24">24</option>
+                                    <option value="26">26</option>
+                                    <option value="28">28</option>
+                                    <option value="22">30</option>
+                                    <option value="24">35</option>
+                                    <option value="26">45</option>
+                                    <option value="28">50</option>
+                                </select>
+                            </li>
+                            <li>
+                                <span class="actn-labels">Text Align</span>
+                                <select id="text-align">
+                                    <option value="">select</option>
+                                    <option value="left">left</option>
+                                    <option value="center">center</option>
+                                    <option value="right">right</option>
+                                </select>
+                            </li>
+                            <li>
+                                <button id="bold">Bold</button>
+                            </li>
+                            <li>
+                                <button id="italic">Italic</button>
+                            </li>
+                            <li>
+                                <button id="underline">Underline</button>
+                            </li>
+                            <li>
+                                <button id="overline">Overline</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="block">
+                        <h2>
+                        Text Colors
+                    </h2>
+                        <ul>
+                            <li>
+                                <span class="actn-labels">Font Color</span>
+                                <input type="color" id="font-color" />
+                            </li>
+                            <!-- <li>
+                                <span class="actn-labels">Text BG color</span>
+                                <input type="color" id="text-bg-color" />
+                            </li> -->
+                            <li>
+                                <span class="actn-labels">Stroke Color</span>
+                                <input type="color" id="stroke-color" />
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="block">
+                        <h2>
+                        Text Heights
+                    </h2>
+                        <ul>
+                            <li>
+                                <span class="actn-labels">Stroke Width</span>
+                                <input type="range" id="stroke-width" min="0" max="5" value="0" />
+                            </li>
+                            <li>
+                                <span class="actn-labels">Line Height</span>
+                                <input type="range" id="line-height" min="0" max="20" value="0" />
+                            </li>
+                            <li>
+                                <span class="actn-labels">Opacity</span>
+                                <input type="range" id="opacity" value="100" />
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="sub-actions text-styles ui-widget-content" id="image-styles">
+                <div class="text-style-handler">
+                    <p>
+                        Image Properties
+                    </p>
+                    <span class="close imgstyle-close">
+                        X
+                    </span>
+                </div>
+                <div class="block">
+                    <h2>Controls</h2>
+                    <button class="frnt">Bring To Front</button>
+                    <button class="back">Send To Back</button>
+                    <button class="frwd">Bring Forward</button>
+                    <button class="bkrd">Send Backward</button>
+                    <h2>Opacity</h2>
+                    <input type="range" value="100" class="img-opacity" min="0" max="100">
+                </div>
+            </div>
+        </section>
+        <section class="canvas-block">
+            <canvas id="canvasid"></canvas>
+        </section>
+        <div class="welcome-box">
+            <div class="bx-wrapper">
+                <div class="controls">
+                    <div class="child-bx create">
+                        <i class="fa fa-plus"></i>
+                        <h2>Create Template</h2>
+                    </div>
+                    <div class="child-bx recentprj">
+                        <i class="fa fa-floppy-o"></i>
+                        <h2>Saved Templates</h2>
+                    </div>
+                </div>
+                <div class="result-wrap">
+                    <div class="create-div">
+                        <div class="head-block">
+                            <span class="titles" style="float:left;">Template Name</span>
+                            <button class="contrl-redo">
+                                <i class="fa fa-arrow-left"></i>
+                            </button>
+                        </div>
+                        <input type="text" class="create-template">
+                        <button class="create-btn">Create</button>
+                    </div>
+                    <div class="saved-projs">
+                        <div class="head-block">
+                            <span class="titles" style="float:left;">Saved Templates</span>
+                            <button class="contrl-redo">
+                                <i class="fa fa-arrow-left"></i>
+                            </button>
+                        </div>
+                        <ul>
+                            <!-- <li>
+                                <span class="prj-img">
+                                    <i class="fa fa-file-image-o"></i>
+                                </span>
+                                <span class="prj-title">Template 1</span>
+                            </li>
+                            <li>
+                                <span class="prj-img">
+                                    <i class="fa fa-file-image-o"></i>
+                                </span>
+                                <span class="prj-title">Template 1</span>
+                            </li>
+                            <li>
+                                <span class="prj-img">
+                                    <i class="fa fa-file-image-o"></i>
+                                </span>
+                                <span class="prj-title">Template 1</span>
+                            </li>
+                            <li>
+                                <span class="prj-img">
+                                    <i class="fa fa-file-image-o"></i>
+                                </span>
+                                <span class="prj-title">Template 1</span>
+                            </li>
+                            <li>
+                                <span class="prj-img">
+                                    <i class="fa fa-file-image-o"></i>
+                                </span>
+                                <span class="prj-title">Template 1</span>
+                            </li>
+                            <li>
+                                <span class="prj-img">
+                                    <i class="fa fa-file-image-o"></i>
+                                </span>
+                                <span class="prj-title">Template 1</span>
+                            </li>
+                            <li>
+                                <span class="prj-img">
+                                    <i class="fa fa-file-image-o"></i>
+                                </span>
+                                <span class="prj-title">Template 1</span>
+                            </li>
+                            <li>
+                                <span class="prj-img">
+                                    <i class="fa fa-file-image-o"></i>
+                                </span>
+                                <span class="prj-title">Template 1</span>
+                            </li>
+                            <li>
+                                <span class="prj-img">
+                                    <i class="fa fa-file-image-o"></i>
+                                </span>
+                                <span class="prj-title">Template 1</span>
+                            </li>
+                            <li>
+                                <span class="prj-img">
+                                    <i class="fa fa-file-image-o"></i>
+                                </span>
+                                <span class="prj-title">Template 1</span>
+                            </li>
+                            <li>
+                                <span class="prj-img">
+                                    <i class="fa fa-file-image-o"></i>
+                                </span>
+                                <span class="prj-title">Template 1</span>
+                            </li>
+                            <li>
+                                <span class="prj-img">
+                                    <i class="fa fa-file-image-o"></i>
+                                </span>
+                                <span class="prj-title">Template 1</span>
+                            </li>
+                            <li>
+                                <span class="prj-img">
+                                    <i class="fa fa-file-image-o"></i>
+                                </span>
+                                <span class="prj-title">Template 1</span>
+                            </li>
+                            <li>
+                                <span class="prj-img">
+                                    <i class="fa fa-file-image-o"></i>
+                                </span>
+                                <span class="prj-title">Template 1</span>
+                            </li>
+                            <li>
+                                <span class="prj-img">
+                                    <i class="fa fa-file-image-o"></i>
+                                </span>
+                                <span class="prj-title">Template 1</span>
+                            </li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="vendors/jquery.min.js"></script>
+    <script type="text/javascript" src="vendors/jquery-ui.js"></script>
+    <script type="text/javascript" src="vendors/fabric.min.js"></script>
+    <script type="text/javascript" src="assets/js/controllers.js"></script>
+    <script type="text/javascript" src="assets/js/fabric-script.js"></script>
+</body>
+
+</html>
